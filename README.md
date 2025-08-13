@@ -19,3 +19,8 @@ DUET (Degenerate Unmixing Estimation Technique) separates overlapping sound sour
    - **Relative delay** `τ` (via phase vs. frequency slope)  
 3. **Clustering**: Map each TF bin `(f, n)` to a point `(â, τ̂)`; cluster into **N** groups.  
 4. **Reconstruction**: Build binary/soft masks per cluster and apply to `X₁` or a mix; inverse STFT → **N separated sources**.
+
+
+## References
+- Jourjine, A., Rickard, S., & Yilmaz, O. (2000). **Blind Separation of Disjoint Orthogonal Signals: DUET**. *IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)*. [https://doi.org/10.1109/ICASSP.2000.859087](https://doi.org/10.1109/ICASSP.2000.859087)  
+- Rickard, S., Balan, R., & Rosca, J. (2001). **Real-Time Time–Frequency Masks for Source Separation**. *Proceedings of the SAPA Workshop on Statistical and Perceptual Audio Processing*. [https://www.mee.tcd.ie/~sigproc/pubs/sapa01.pdf](https://www.mee.tcd.ie/~sigproc/pubs/sapa01.pdf)
