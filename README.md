@@ -1,6 +1,6 @@
 # DUET: Blind Sound Source Separation (DoA + Delay/Attenuation Clustering)
 
-DUET (Degenerate Unmixing Estimation Technique) separates overlapping sound sources from **two microphone signals** by exploiting **relative delay** and **attenuation** across time–frequency bins. This repo implements an end-to-end DUET pipeline with reproducible experiments, plots, and audio outputs.
+DUET (Degenerate Unmixing Estimation Technique) separates overlapping sound sources from **two microphone signals** by exploiting **relative delay** and **attenuation** across time–frequency bins.
 
 ## What this project does
 - Takes two-channel audio `(x₁(t), x₂(t))`
