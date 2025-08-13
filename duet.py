@@ -73,3 +73,21 @@ def duet_source_separation(mic_data_folder, NUM_SOURCES):
         output.append(out.astype(np.int16)) 
         
     return output
+
+def calculate_score(calculated, expected):
+    student_result = set()
+    calculated = np.array(calculated)
+    if calculated.shape[0] != len(expected):
+      return 0, {'Incorrect number of sources!'}
+    for i in range(calculated.shape[0]):
+        scipy.io.wavfile.write("temp.wav",22050,calculated[i,:])
+        r = sr.Recognizer()
+        with sr.AudioFile("temp.wav") as source:
+            audio = r.record(source)
+        try:
+            text = r.recognize_sphinx(audio)
+            student_result.add(text.lower())
+        except:
+            student_result.add("Sphinx could not understand audio")
+    score = len(student_result.intersection(expected))/len(expected)
+    return score, student_result
